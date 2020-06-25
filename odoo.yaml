@@ -12,12 +12,12 @@ metadata:
   name: odoo-db
   namespace: odoo
   labels:
-    app: odoo-shop
+    app: rif-odoo
 spec:
   ports:
     - port: 5432
   selector:
-    app: odoo-shop
+    app: rif-odoo
     tier: backend
   type: NodePort
 ---
@@ -27,18 +27,18 @@ metadata:
   name: odoo-db
   namespace: odoo
   labels:
-    app: odoo-shop
+    app: rif-odoo
 spec:
   selector:
     matchLabels:
-      app: odoo-shop
+      app: rif-odoo
       tier: backend
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: odoo-shop
+        app: rif-odoo
         tier: backend
     spec:
       containers:
@@ -65,36 +65,36 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: odoo-shop
+  name: rif-odoo
   namespace: odoo
   labels:
-    app: odoo-shop
+    app: rif-odoo
 spec:
   ports:
     - port: 8069
   selector:
-    app: odoo-shop
+    app: rif-odoo
     tier: frontend
   type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: odoo-shop
+  name: rif-odoo
   namespace: odoo
   labels:
-    app: odoo-shop
+    app: rif-odoo
 spec:
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: odoo-shop
+      app: rif-odoo
       tier: frontend
   template:
     metadata:
       labels:
-        app: odoo-shop
+        app: rif-odoo
         tier: frontend
     spec:
       containers:
@@ -169,7 +169,7 @@ metadata:
   name: odoo-db-pvc
   namespace: odoo
   labels:
-    app: odoo-shop
+    app: rif-odoo
 spec:
   accessModes:
     - ReadWriteOnce
