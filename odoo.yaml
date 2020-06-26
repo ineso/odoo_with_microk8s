@@ -155,7 +155,7 @@ metadata:
   name: odoo-pvc
   namespace: odoo
   labels:
-    app: odoo-shop
+    app: rif-odoo
 spec:
   accessModes:
     - ReadWriteOnce
