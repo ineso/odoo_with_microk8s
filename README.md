@@ -23,13 +23,14 @@ Pour voir vos pods et vos services crée:
 
 > kubectl get pods -n odoo
 >kubectl get services -n odoo
+>kubectl get ingress -n odoo
 
 ### Etape3: Ouvrir l'application dans le navigateur
 
 Tout d'abord, lancer cette commande pour voir l'adresse de minikube 
 
-> minikube service rif-odoo -n odoo 
+> curl rif.info/
 
-Après avoir crée votre base de donnée, vous pouvez acceder et télécharger vos plugin selon votre besoin:
+Ouvrez le lien dans votre navigateur pout créer votre premiere base de données. Après avoir crée votre base de donnée, vous pouvez acceder et télécharger vos plugin selon votre besoin:
 
  ![alt text](odooscreen.png) 
