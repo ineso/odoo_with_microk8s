@@ -1,0 +1,21 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: example-ingress
+  namespace: odoo
+  annotations:
+
+spec:
+  rules:
+  - host: rif.info
+    http:
+      paths:
+
+        - path: /
+          backend:
+            serviceName: rif-odoo
+            servicePort: 8069
+
+
+
